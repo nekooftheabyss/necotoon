@@ -1,9 +1,17 @@
 <template>
-  <div class="min-h-screen flex flex-col dark:bg-gray-900 dark:text-white">
-    <main class="flex-1 mt-24">
-        <div class = "border-t border-b border-primary-500 py-1">
-            <div class = "mx-auto max-w-7xl"><UiNavPane /></div>
-        </div>
+  <div
+    class="min-h-screen flex flex-col dark:bg-stone-900 dark:text-white tracking-wide leading-6 transition-colors duration-500 ease-in-out"
+  >
+    <div class="py-4 flex items-center justify-center">
+      <img
+        :src="$colorMode.preference == `dark` ? `/icon_dark.webp` : `/icon.webp`"
+        class="h-24 relative"
+      />
+    </div>
+    <main class="flex-1">
+      <div class="border-t border-b border-primary-500 py-1">
+        <div class="mx-auto max-w-7xl"><UiNavPane /></div>
+      </div>
       <slot />
     </main>
     <UiFab :right="false" :links="links" />

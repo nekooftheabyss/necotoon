@@ -47,7 +47,7 @@
         v-for="(route, i) in links"
         :key="route.name"
         :href="route.href"
-        class="left-4 absolute block transition duration-500 ease-in-out transform z-40 group bg-black/40 dark:bg-transparent p-2"
+        :class="`left-4 absolute block transition duration-500 ease-in-out transform z-40 group ${navState ? `bg-black/40` : `bg-transparent`} dark:bg-transparent p-2`"
         :style="{
           transform: `translate(0, ${
             navState ? (right ? -1 : 1) * 5 * (i + 1) : 0
@@ -83,7 +83,7 @@
         </div>
       </a>
       <button
-        class="left-4 absolute block transition duration-500 ease-in-out transform z-40 group bg-black/40 dark:bg-transparent p-2"
+        :class="`left-4 absolute block transition duration-500 ease-in-out transform z-40 group ${navState ? `bg-black/40` : `bg-transparent`} dark:bg-transparent p-2`"
         :style="{
           transform: `translate(0, ${
             navState ? (right ? -1 : 1) * 5 * (links.length + 1) : 0

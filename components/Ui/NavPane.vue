@@ -3,9 +3,10 @@
     <div
       v-for="(item, index) in data"
       :key="route + `_` + item"
-      class="flex flex-row items-center gap-2"
+      class="flex flex-row items-center gap-2 h-[2rem]"
     >
-      <a :href="`/${data.slice(0, index + 1).join(`/`)}`">{{ item.replace("_", " ") }}</a>
+      <a :href="`/${data.slice(0, index + 1).join(`/`)}`" class="leading-8">{{ item.replace("_", " ") }}</a>
+      
       <span class="p-px"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +31,7 @@
 <script setup lang="ts">
 const route = useRoute();
 const router = useRouter();
-router.resolve()
+//router.resolve()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 const current = route.path;
 const data = current.split("/").filter((x) => x);
 const last = data.pop();
